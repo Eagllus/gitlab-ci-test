@@ -1,0 +1,41 @@
+stages:
+- test
+
+only_gitlab_yml:
+  stage: test
+  script: env
+  only:
+    changes:
+    - .gitlab-ci.yml
+
+only_readme:
+  stage: test
+  script: env
+  only:
+    changes:
+    - README.md
+
+only_gitlab_yml_epr:
+  stage: test
+  script: env
+  only:
+    refs:
+    - external_pull_requests
+    changes:
+    - .gitlab-ci.yml
+
+only_readme_epr:
+  stage: test
+  script: env
+  only:
+    refs:
+    - external_pull_requests
+    changes:
+    - README.md
+
+only_external_pull_requests:
+  stage: test
+  script: env
+  only:
+    refs:
+    - external_pull_requests
