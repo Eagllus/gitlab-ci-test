@@ -37,5 +37,4 @@ only_external_pull_requests:
   stage: test
   script: env
   only:
-    refs:
     - external_pull_requests
