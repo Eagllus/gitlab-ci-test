@@ -19,25 +19,3 @@ except-pull-requests:
   script: echo 'this should not run on pull requests'
   except:
     - external_pull_requests
-
-only_gitlab_yml_epr:
-  stage: test
-  script: env
-  only:
-    - external_pull_requests
-    changes:
-      - .gitlab-ci.yml
-
-only_readme_epr:
-  stage: test
-  script: env
-  only:
-    - external_pull_requests
-    changes:
-      - README.md
-
-only_external_pull_requests:
-  stage: test
-  script: env
-  only:
-    - external_pull_requests
